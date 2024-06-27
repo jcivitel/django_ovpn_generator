@@ -1,0 +1,9 @@
+services:
+  ovpn-generator:
+    image: jcivitell/ovpn_generator
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      tags:
+      - "jcivitell/ovpn_generator:${CIRCLE_BRANCH:-nobranch}"
+      - "jcivitell/ovpn_generator:${CIRCLE_TAG:-notag}"
